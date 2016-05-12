@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="">
+<input type="text" ng-model="filter" />
+<button ng-click="search(filter)">Search Movie</button>
+app.controller('ExampleCtrl', function($scope,rtAPIservice ){
+
+  $scope.filter = '';
+  $scope.filteredMovies = [];
+
+  $scope.search = function(filter){
+    rtAPIservice.getFilteredMovies(filter)
+      .then(function(data){
+        $scope.filteredMovies = data;
+      });
+  }
+
+})
+
+app.factory('rtAPIservice', function($http) {
+
+  var rtAPI = {};
+
+  rtAPI.getMoviesAll = function(filter) {
+    return $http({
+      method: 'JSONP', 
+      url: 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?q='+ filter +  '&page_limit=10&page=1&apikey=MyKey&callback=JSON_CALLBACK'
+      });
+    }
+
+  return rtAPI;
+});
+
