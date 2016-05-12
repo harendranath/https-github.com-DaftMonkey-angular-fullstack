@@ -1,5 +1,5 @@
 /**
-Harendranath.V Btech,Mtech(cst),PHD..CSE GITAM University ,SoftWareEngineer
+Harendranath.V Btech,Mtech(cst),PHD..CSE GITAM University ,TechLead...
  */
 (function(window, angular) {'use strict';
 
