@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+ 
+ <meta charset="UTF-8">
+ 
+ <title>Example - example-example11-production</title>
+  
+
+ 
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  
+<script src="script.js"></script>
+  
+
+ 
+ 
+</head>
+<body ng-app="docsBindExample">
+  
+<div ng-controller="Controller">
+ 
+ Hello <input ng-model='name'> <hr/>
+ 
+ <span ng-bind="name"></span> <br/>
+ 
+ <span ng:bind="name"></span> <br/>
+
+  <span ng_bind="name"></span> <br/>
+ 
+ <span data-ng-bind="name"></span> <br/>
+
+  <span x-ng-bind="name"></span> <br/>
+
+</div>
+
+</body>
+
+</html>
+
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
